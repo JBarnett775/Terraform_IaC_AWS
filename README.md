@@ -30,7 +30,7 @@ terraform version
 
 ![layout](images/layout.png) 
 
-#### The reason the Terraform infrastructure is broken down into multiple files as mainly for organisation, readability and maintainability. This helps people understand different aspects of the Terraform project when they are viewing it.
+#### The reason the Terraform infrastructure is broken down into multiple files is mainly for organisation, readability and maintainability. This helps people understand different aspects of the Terraform project when they are viewing it.
 
 ## - Creating the provider block - 
 #### in the main.tf file I will set out the required versions of Terraform and AWS that I will be required, this is important to do as it makes sure that everyone running the infrastructure uses compatible versions of Terraform and its providers. This prevents unexpected failures, breaking changes, and inconsistent deployments.

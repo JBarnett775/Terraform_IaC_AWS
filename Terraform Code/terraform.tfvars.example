@@ -1,0 +1,2 @@
+aws_region = "ap-northeast-3"
+key_name   = "AWS_key_name"

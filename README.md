@@ -30,7 +30,7 @@ terraform version
 
 ![layout](images/layout.png) 
 
-#### The reason the Terraform infrastructure is broken down into multiple files is mainly for organisation, readability and maintainability. This helps people understand different aspects of the Terraform project when they are viewing it.
+#### The reason the Terraform infrastructure is broken down into multiple files as mainly for organisation, readability and maintainability. This helps people understand different aspects of the Terraform project when they are viewing it.
 
 ## - Creating the provider block - 
 #### in the main.tf file I will set out the required versions of Terraform and AWS that I will be required, this is important to do as it makes sure that everyone running the infrastructure uses compatible versions of Terraform and its providers. This prevents unexpected failures, breaking changes, and inconsistent deployments.
@@ -54,7 +54,7 @@ required_providers {
 #### Adding this line will allow me to use the AWS provider plugin to communicate with AWS. The version constraint will allow any version of between 6.0 and 6.99 . 
 
 ## - Variables - 
-#### Separating variables in terraform is good practice as it allows the code to be easier to: reuse, manage and maintain. Declaring all the variables in one file will help with code organisation which will also make the code easier to re-use as to change parts of the infrastructure such as an EC2 instance size or a AWS region and easily be modified in a variable file instead of skimming through a main.tf file to change them. Within my variables.tf file I have created variables for: aws region, VPC cidr block, two public subnets, instance type and the key name.
+#### Separating variables in terraform is good practice as it allows the code to be easier to: reuse, manage and maintain. Declaring all the variables in one file will help with code organisation which will also make the code easier to re-use as to change parts of the infrastructure such as an EC2 instance size or a AWS region can easily be modified in a variable file instead of skimming through a main.tf file to change them. Within my variables.tf file I have created variables for: aws region, VPC cidr block, two public subnets, instance type and the key name.
 
 ![var](images/variables.png) 
 
@@ -77,10 +77,10 @@ resource "aws_vpc" "main" {
 
 ![subnet](images/subnets.png) 
 
-#### With my subnets I have created them in separate data centre so that if one of them goes down the other will still be up and running, this follows the concept of availability
+#### With my subnets I have created them in a separate data centre so that if one of them goes down the other will still be up and running, this follows the concept of availability
 
 ## - Adding an Internet Gateway and Route Table -
-#### So far I have created a VPC and some subnets, currently my network is completely isolated. To visualise this issue it is as though I have built a house but there is no road connecting it to the outside world, I think this issue by adding in the Internet Gateway (IGW) and the route table.
+#### So far I have created a VPC and some subnets, currently my network is completely isolated. To visualise this issue it is as though I have built a house but there is no road connecting it to the outside world, I fix this issue by adding in the Internet Gateway (IGW) and the route table.
 
 ![IGW](images/IGW.png)
 
@@ -103,7 +103,7 @@ resource "aws_vpc" "main" {
 
 ![UD](images/UD.png)
 
-#### I also decided to automatically install a web server when my EC2 is launched, I did this by adding user_data to my code so that a script runs when the instance first boots. The server will automatically update packages install packages, start a web server and will create a sample homepage. 
+#### I also decided to automatically install a web server when my EC2 is launched, I did this by adding user_data to my code so that a script runs when the instance first boots. The server will automatically update packages and install packages, start a web server and will create a sample homepage. 
 
 ## - Creating Outputs -
 #### Adding outputs to Terraform is useful as they can show important results after everything is created, I have added the following code to my outputs.tf file
@@ -118,7 +118,7 @@ resource "aws_vpc" "main" {
 ![tfvars](images/tfvars.png)
 
 ## - Git Ignore - 
-#### Adding a Git ignore file is important to add to a Terraform project for the following reasons: Security, keeping the repository clean, avoid the exposure of infrastructure state or secrets. 
+#### Adding a Git ignore file is important to add to a Terraform project for the following reasons: Security, keeping the repository clean, and to avoid the exposure of infrastructure state or secrets. 
 
 ![gitIgnore](images/gitIgnore.png)
 
@@ -129,7 +129,7 @@ resource "aws_vpc" "main" {
 #### If someone was to use my code and use the variables in the tfvars.example file then they would be launching their infrastructure in Osaka.
 
 ## - Applying the Terraform - 
-#### Now that I have created my IaC using Terraform I will now run my workflow to test that it has been created correctly, to do I will run the following commands in this order:
+#### Now that I have created my IaC using Terraform I will now run my workflow to test that it has been created correctly, to do this I will run the following commands in this order:
 ```
 terraform init
 terraform fmt
@@ -148,7 +148,7 @@ terraform apply
 
 #### Finally I will run the Terraform "apply" command to launch my infrastructure, I can see that this has been successful and that the required outputs have been printed to the terminal
 
-![termOutputs](images/termOuputs.png)
+![termOutputs](images/toutputs.png)
 
 ## - Validating the Terraform - 
 #### Now that my infrastructure has been deployed I will run the following tests to ensure it has done what was intended

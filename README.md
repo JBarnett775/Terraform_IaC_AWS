@@ -1,6 +1,6 @@
 # - AWS Infrastructure with Terraform - 
 
-#### add an overview here
+#### This README file will document how I have been able to create an AWS Infrastructure using Terraform, it will include insights, code snippets and screenshots of the work I have completed.
 
 ## - Setting up - 
 #### To set up my project I have installed the following:

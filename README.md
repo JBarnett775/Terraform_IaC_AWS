@@ -144,7 +144,7 @@ terraform apply
 
 ![TWF](images/TWF.png)
 
-#### Running Terraform "plan" will preview what will happen if you commit the code, terraform will compare your code to the current state and what already exists in AWS. This is important step as it can catch any mistakes that could occur such as deploying the infrastructure in the wrong region or launching the wrong instance size which could lead to additional unforeseen costs.
+#### Running Terraform "plan" will preview what will happen if you commit the code, terraform will compare your code to the current state and what already exists in AWS. This is an important step as it can catch any mistakes that could occur such as deploying the infrastructure in the wrong region or launching the wrong instance size which could lead to additional unforeseen costs.
 
 #### Finally I will run the Terraform "apply" command to launch my infrastructure, I can see that this has been successful and that the required outputs have been printed to the terminal
 
